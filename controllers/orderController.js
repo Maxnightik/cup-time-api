@@ -30,13 +30,16 @@ export const createOrder = (req, res) => {
 
   // Здесь можно добавить логику для сохранения заказа в базу данных или отправки уведомления
 
-  res.status(201).json({
-    message: "Заказ успешно создан",
-    order: {
-      name,
-      phone,
-      address,
-      items: orderItems,
-    },
-  });
+ const id = Math.floor(Math.random() * 100000)
+
+ res.status(201).json({
+  message: 'Заказ успешно создан',
+  order: {
+   id,
+   name,
+   phone,
+   address,
+   items: orderItems,
+  },
+ });
 };
